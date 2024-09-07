@@ -26,7 +26,7 @@ class BloomFilter:
         hash_result.update(str(seed).encode())
         return int(hash_result.hexdigest(), 16)
 
-# Passing bucket size as 1000 
+# Passing bucket size as 1000, passing 5 hashfunctions which results in 5 indices for single insertion
 bloom = BloomFilter(size=1000, hash_count=5)
 
 # Inserting into the bucket
