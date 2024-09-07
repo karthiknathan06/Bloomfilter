@@ -11,20 +11,20 @@ A Bloom filter is a data structure that allows you to test whether an element is
 
 2. **Adding Elements:**
    - When adding an element, it is passed through multiple hash functions, each producing an index corresponding to a position in the bit array. The bits at these positions are set to `1`.
-  
-     ![Insert text1](static/explain1.png)
 
-     ![Insert text2](static/explain2.png)
+     <img src="static/explain1.png" alt="Insert text1" width="400"/>
+
+     <img src="static/explain2.png" alt="Insert text2" width="400"/>
 
 3. **Checking Membership:**
    - To check if an element is in the set, it is hashed again using the same hash functions. If all the bits at the corresponding positions are `1`, the element might be in the set; if any bit is `0`, the element is definitely not in the set.
   
-     ![Search text2](static/explain3.png)
+     <img src="static/explain3.png" alt="Search text2" width="400"/>
 
 4. **False Positives:**
    - Bloom filters can return false positives, where the filter indicates that an element is in the set when it’s not. However, they never return false negatives.
   
-     ![Search NA text](static/explain4.png)
+     <img src="static/explain4.png" alt="Search NA text" width="400"/>
 
 ## Efficiency Compared to Hash Maps
 
