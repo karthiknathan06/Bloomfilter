@@ -1,10 +1,8 @@
-# Understanding Bloom Filters: Efficiency, Use Cases, and Application in Cassandra
-
-When dealing with large datasets, optimizing memory usage and query performance is crucial. A **Bloom filter** is a space-efficient probabilistic data structure designed for scenarios where memory is limited, and you need to quickly determine if an element is part of a set. This document explores what a Bloom filter is, how it compares to a hash map, and its application in Apache Cassandra.
+When dealing with large datasets, optimizing memory usage and query performance is crucial. A **Bloom filter** is a space-efficient probabilistic data structure designed for scenarios where memory is limited, and you need to quickly determine if an element is present or not. 
 
 ## What is a Bloom Filter?
 
-A Bloom filter is a data structure that allows you to test whether an element is in a set with a small probability of false positives (but zero false negatives). It operates by using multiple hash functions to map an element to several positions in a bit array. If all the bits at these positions are set to `1`, the element is considered to be in the set; if any of the bits are `0`, the element is definitely not in the set.
+A Bloom filter is a data structure that allows you to test whether an element is in a set with a small probability of false positives (It may result non existing element as present, but won't return existing element as not present). It operates by using multiple hash functions to map an element to several positions in a bit array. If all the bits at these positions are set to `1`, the element is considered to be in the set; if any of the bits are `0`, the element is definitely not in the set.
 
 ## How a Bloom Filter Works
 
