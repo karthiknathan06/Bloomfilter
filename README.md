@@ -11,6 +11,8 @@ When dealing with large datasets, optimizing memory usage and query performance 
 
 ## How a Bloom Filter Works
 
+- Simple Implementation: [bloom_filter.py](main.py)
+
 1. **Initialization:**
    - A bit array of a fixed size is initialized, with all bits set to `0`.
 
