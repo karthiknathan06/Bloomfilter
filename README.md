@@ -32,7 +32,7 @@ When dealing with large datasets, optimizing memory usage and query performance 
 
 4. **False Positives:**
    - Bloom filters can return false positives, where the filter indicates that an element is in the set when it’s not. However, they never return false negatives.
-   - Here eventhough Africa is not in the set, and the indices returned by hash functions are already set, it is false positive case.
+   - Here eventhough Africa is not in the set, and the indices returned by hash functions are already set, it return True which is a false positive case.
   
      <img src="static/explain4.png" alt="Search NA text" width="400"/>
 
