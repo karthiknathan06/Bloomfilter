@@ -30,12 +30,12 @@ class BloomFilter:
 bloom = BloomFilter(size=1000, hash_count=5)
 
 # Inserting into the bucket
-bloom.add("apple")
-bloom.add("banana")
-bloom.add("cherry")
+bloom.add("Karthik")
+bloom.add("Arun")
+bloom.add("Kalai")
 
 # Output: True
-print(bloom.check("apple"))  
+print(bloom.check("Arun"))  
 # Output: False
-print(bloom.check("grape")) 
+print(bloom.check("Michael")) 
 
