@@ -11,6 +11,7 @@ A Bloom filter is a data structure that allows you to test whether an element is
 
 2. **Adding Elements:**
    - When adding an element, it is passed through multiple hash functions, each producing an index corresponding to a position in the bit array. The bits at these positions are set to `1`.
+   - Here input gets passed through 3 hash functions and returns 3 indices, where bits are set to 1.
 
      <img src="static/explain1.png" alt="Insert text1" width="400"/>
 
@@ -18,13 +19,24 @@ A Bloom filter is a data structure that allows you to test whether an element is
 
 3. **Checking Membership:**
    - To check if an element is in the set, it is hashed again using the same hash functions. If all the bits at the corresponding positions are `1`, the element might be in the set; if any bit is `0`, the element is definitely not in the set.
+   - It checks all the indices having set bits and return true.
   
      <img src="static/explain3.png" alt="Search text2" width="400"/>
 
 4. **False Positives:**
    - Bloom filters can return false positives, where the filter indicates that an element is in the set when it’s not. However, they never return false negatives.
+   - Here eventhough Africa is not in the set, and the indices returned by hash functions are already set, it is false positive case.
   
      <img src="static/explain4.png" alt="Search NA text" width="400"/>
+
+   - These FP could be reduced by using proper hash functions, increasing the bucket size, increasing the hash functions and so on.
+  
+## When not to use BF
+
+- When exact results needed
+- When deletion required
+- When space efficiency not a concern
+- If dataset is small
 
 ## Efficiency Compared to Hash Maps
 
@@ -70,4 +82,4 @@ Apache Cassandra, a distributed NoSQL database, uses Bloom filters to optimize r
 
 ## Conclusion
 
-Bloom filters are a powerful tool for optimizing memory usage and speeding up membership checks in large datasets. Compared to hash maps, Bloom filters are more space-efficient and faster in scenarios where only membership testing is required. Apache Cassandra leverages Bloom filters to minimize disk I/O and enhance read performance, making it an essential part of the database's architecture. Understanding and utilizing Bloom filters can lead to significant performance gains in systems handling vast amounts of data.
+Bloom filters are a powerful tool for optimizing memory usage and speeding up membership checks in large datasets. Compared to hash maps, Bloom filters are more space-efficient and faster in scenarios where only membership testing is required. Understanding and utilizing Bloom filters can lead to significant performance gains in systems handling vast amounts of data.
