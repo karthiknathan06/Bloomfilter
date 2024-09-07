@@ -2,10 +2,12 @@ When dealing with large datasets, optimizing memory usage and query performance 
 
 ## What is a Bloom Filter?
 
-A Bloom filter is a data structure that allows you to test whether an element is in a set with a small probability of false positives (It may result non existing element as present, but won't return existing element as not present). It operates by using multiple hash functions to map an element to several positions in a bit array. If all the bits at these positions are set to `1`, the element is considered to be in the set; if any of the bits are `0`, the element is definitely not in the set.
+- A Bloom filter is a data structure that allows you to test whether an element is in a set with a small probability of false positives (It may result non existing element as present, but won't return existing element as not present).
+- It operates by using multiple hash functions to map an element to several positions in a bit array.
+- If all the bits at these positions are set to `1`, the element is considered to be in the set; if any of the bits are `0`, the element is definitely not in the set.
 
 ### Note
-Deletion is not possible in bloom filter, since it stores only the hash not the actual data. unsetting bits can remove other entries as well.
+- Deletion is not possible in bloom filter, since it stores only the hash not the actual data. unsetting bits can remove other entries as well.
 
 ## How a Bloom Filter Works
 
